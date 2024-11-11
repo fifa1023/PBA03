@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js with Text Overlay</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* スクロールバーを非表示にする */
+            background-color: #bebebe; /* 背景色を明るいグレーに変更 */
+        }
+        #overlayText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, sans-serif;
+            font-size: 3em; /* フォントサイズを少し大きく設定 (元は2em) */
+            color: #d7f00a; /* テキストの色を明るい黄色に変更 */
+            z-index: 10; /* テキストを最前面に表示 */
+            pointer-events: none; /* テキストがクリックを受けないようにする */
+        }
+        .cursor {
+            display: inline-block;
+            animation: blink 1s infinite step-end;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- タイプライター効果で文字が追加されるため、最初は空の状態 -->
+    <div id="overlayText"></div>
+
+    <!-- Three.jsのスクリプト -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
